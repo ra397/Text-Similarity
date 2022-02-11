@@ -105,7 +105,7 @@ int main() {
                 while (s[s.size() - 1] == ',' || s[s.size() - 1] == '.' || s[s.size() - 1] == '!' ||
                        s[s.size() - 1] == '?' ||
                        s[s.size() - 1] == ';' || s[s.size() - 1] == ':' || s[s.size() - 1] == '"' ||
-                       s[s.size() - 1] == ')') {
+                       s[s.size() - 1] == ')' || s[s.size() - 1] == '\'') {
                     s.pop_back();
                 }
                 while (s[0] == '"' || s[0] == '\'' || s[0] == '(') {
