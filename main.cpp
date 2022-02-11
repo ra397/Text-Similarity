@@ -84,9 +84,8 @@ int main() {
     ifstream file1(input1);
     if (!file1.is_open()) {
         cout << input1 << " could not open" << endl;
-        exit(1);
+        exit(0);
     }
-
     ifstream file2(input2);
     if (!file2.is_open()) {
         cout << input2 << " could not open" << endl;
@@ -193,8 +192,9 @@ int main() {
     double doc1_magnitude = sqrt(doc1_sum);
     double doc2_magnitude = sqrt(doc2_sum);
 
-    cout << "Similarity score: " << dot_product_sum / (doc1_magnitude * doc2_magnitude) << endl;
-
+    double score = dot_product_sum / (doc1_magnitude * doc2_magnitude);
+    cout << "Similarity score: " << score << endl;
+    
     return 0;
 }
 
