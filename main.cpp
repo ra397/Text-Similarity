@@ -101,10 +101,10 @@ int main() {
         while (linestream >> s) {
             // standardize string s
             if (!s.empty()) {
-                while (s[s.size() - 1] == ',' || s[s.size() - 1] == '.' || s[s.size() - 1] == '!' ||
+                while (!s.empty() && (s[s.size() - 1] == ',' || s[s.size() - 1] == '.' || s[s.size() - 1] == '!' ||
                        s[s.size() - 1] == '?' ||
                        s[s.size() - 1] == ';' || s[s.size() - 1] == ':' || s[s.size() - 1] == '"' ||
-                       s[s.size() - 1] == ')' || s[s.size() - 1] == '\'') {
+                       s[s.size() - 1] == ')' || s[s.size() - 1] == '\'')) {
                     s.pop_back();
                 }
                 while (s[0] == '"' || s[0] == '\'' || s[0] == '(') {
@@ -139,11 +139,11 @@ int main() {
         string s;
         while (linestream >> s) {
             if (!s.empty()) {
-                while (s[s.size() - 1] == ',' || s[s.size() - 1] == '.' || s[s.size() - 1] == '!' ||
+                while (!s.empty() && (s[s.size() - 1] == ',' || s[s.size() - 1] == '.' || s[s.size() - 1] == '!' ||
                        s[s.size() - 1] == '?' ||
                        s[s.size() - 1] == ';' || s[s.size() - 1] == ':' || s[s.size() - 1] == '"' ||
                        s[s.size() - 1] == '\'' || s[s.size() - 1] == '\n' || s[s.size() - 1] == '\t' ||
-                       s[s.size() - 1] == ')') {
+                       s[s.size() - 1] == ')')) {
                     s.pop_back();
                 }
                 while (s[0] == '"' || s[0] == '\'' || s[0] == '(') {
